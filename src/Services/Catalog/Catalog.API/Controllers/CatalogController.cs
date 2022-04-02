@@ -34,7 +34,7 @@ namespace Catalog.API.Controllers
         public async Task<ActionResult<Product>> GetProduct(string id)
         {
             var product = await _productReporsitory.GetProduct(id);
-            return Ok(product);
+            return product==null?NotFound():Ok(product);
         }
 
         [HttpGet]
