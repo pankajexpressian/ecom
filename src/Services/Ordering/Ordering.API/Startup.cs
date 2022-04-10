@@ -30,13 +30,13 @@ namespace Ordering.API
         {
 
             services.AddApplicationServices();
+            services.AddInfrastructureServices(Configuration);
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Ordering.API", Version = "v1" });
             });
 
-            services.AddInfrastructureServices(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
