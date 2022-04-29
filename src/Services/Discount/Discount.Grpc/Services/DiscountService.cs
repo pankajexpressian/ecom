@@ -40,10 +40,10 @@ namespace Discount.Grpc.Services
             return _mapper.Map<CouponModel>(coupon);
         }
 
-        public override async Task<DeleteDiscountResponse> DeleteDiscount(DeleteDiscountRequest request, ServerCallContext context)
+        public override async Task<DeleteDiscountRespnse> DeleteDiscount(DeleteDiscountRequest request, ServerCallContext context)
         {
             var deleted = await _discountRepository.DeleteDiscountByProductName(request.ProductName);
-            return new DeleteDiscountResponse
+            return new DeleteDiscountRespnse
             {
                 Deleted = deleted
             };
