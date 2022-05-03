@@ -74,6 +74,8 @@
       ],
       "UpstreamPathTemplate": "/Basket/Checkout",
       "UpstreamHttpMethod": [ "POST" ],
+
+      //Rate Limiting start
       "RateLimitOptions": {
         "ClientWhitelist": [],
         "EnableRateLimiting": true,
@@ -81,6 +83,7 @@
         "PeriodTimespan": 1,
         "Limit": 1
       }
+      //Rate Limiting end
     },
     //Discount API
     {
